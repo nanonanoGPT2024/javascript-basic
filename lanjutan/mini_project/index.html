@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Daftar Post</h1>
+    <button onclick="ambilData()">ambil data</button>
+    <ul id="list"></ul>
+
+    <script>
+        async function ambilData() {
+            let response = await fetch("https://jsonplaceholder.typicode.com/posts?_limit=5");
+            let data = await response.json();
+
+
+            let list = document.getElementById("list");
+            list.innerHTML = ""; // kosongkan lisit sebelum menambahkan data 
+
+            data.forEach((post) => {
+                let li = document.createElement("li");
+                li.innerText = post.title;
+                list.appendChild(li);
+            });
+        }
+    </script>
+</body>
+</html>

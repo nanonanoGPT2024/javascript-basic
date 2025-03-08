@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="task" placeholder="Tambahkan Tugas" />
+    <button onclick="tambahTugas()">Tambah</button>
+    <ul id="listTugas"></ul>
+
+    <script>
+      function tambahTugas() {
+        let input = document.getElementById("task");
+        let list = document.getElementById("listTugas");
+
+        if (input.value !== "") {
+          let li = document.createElement("li");
+          li.innerText = input.value;
+
+          //  tombol hapus
+          let btnHapus = document.createElement("button");
+          btnHapus.innerText = "Hapus";
+
+          btnHapus.onclick = function () {
+            list.removeChild(li);
+          };
+
+          li.appendChild(btnHapus);
+          list.appendChild(li);
+          input.value = "";
+        }
+      }
+    </script>
+  </body>
+</html>

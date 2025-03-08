@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="judul">Hallo, dunia</h1>
+    <p class="paragraf">Ini paragraf pertama</p>
+
+    <input type="text" id="nama" placeholder="Masukan Nama" />
+    <p id="hasil"></p>
+    
+
+    <button onclick="ubahText()">Klik saya</button>
+    <button id="tombol">Klik saya dong</button>
+
+    <div>
+        <ul id="daftar"></ul>
+        <button onclick="tambahFunction()"Tambah Item>Tambah Item</button>
+        <button onclick="hapusFunction()"Tambah Item>Hapus Item</button>
+    </div>
+
+    <script>
+      function ubahText() {}
+
+      // mengambil elemetn HTML
+      let judul = document.getElementById("judul");
+      let paragraf = document.querySelector(".paragraf");
+
+      // contoh lain
+      document.getElementsByClassName("paragraf")[0];
+      document.getElementsByTagName("p")[0];
+      document.querySelector("#judul");
+      document.querySelectorAll("paragraf");
+
+      console.log(judul.innerText);
+
+      //   mengubah isi element
+      judul.innerText = "Ubah dong";
+      paragraf.innerHTML = "<strong>Paragraf di ubah dong</strong>";
+
+      // mengubah warna dan gaya css
+      judul.style.color = "blue";
+      judul.style.fontSize = "24px";
+      paragraf.style.display = "none";
+
+      //  3. menangani event
+      let tombol = document.getElementById("tombol");
+
+      tombol.addEventListener("click", function () {
+        alert("button di klik");
+      });
+
+      //  4. event input (menangkap text dari input)
+
+      let inputNama = document.getElementById("nama");
+      let hasil = document.getElementById("hasil");
+
+      inputNama.addEventListener("input", function () {
+        hasil.innerText = "Hallo, " + inputNama.value + "!";
+      });
+
+      //   5, menambah dan menghapus element
+      function tambahFunction() {
+
+        // alert("ini jalan")
+        let daftar = document.getElementById("daftar");
+        let itemBaru = document.createElement("li");
+
+        itemBaru.innerText = "Item Baru";
+        daftar.appendChild(itemBaru);
+      }
+
+      function hapusFunction() {
+        let daftar = document.getElementById("daftar");
+        let itemBaru = document.createElement("li");
+
+        daftar.removeChild(daftar.lastChild);
+      }
+    </script>
+  </body>
+</html>

@@ -50,5 +50,9 @@
 ### 4. membuat komponen pertama
 ### 5. membuat komponen terpisah
 ### 6. props (mengirim data ke komponen)
+    * props digunakan untuk mengirim data ke komponen 
+
 ### 7. state (menyimpan dan mengubah data)
+    * state digunakan untuk menyimpan data yg berubah
+    
 ### 8. event handling (menangani klik , input dll)
